@@ -119,9 +119,11 @@ def exercicios():
             index += 1
 
     def exercicio_17_numeros_pares():
-        # faltando no arquivo original - preencher aqui
-        pass
+        numero: int = 0
 
+        while numero < 20:
+            numero = numero + 2
+            print(numero)
     def exercicio_18_repetir_mensagem():
         mensagem: str = str(input("Digite a mensagem"))
         vezes: int = int(input("Digite o numero de repetições"))
