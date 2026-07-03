@@ -149,6 +149,16 @@ def exercicios():
             senha = input("Senha incorreta, digite novamente")
         print("Senha correta")
 
+    def exercicio_extra_fatorial():
+            numero: int = int(input("Digite o numero "))
+            contador: int = 1
+            soma: int = 1
+
+            while contador <= numero:
+                soma = soma * contador
+                contador += 1
+            print(soma)
+
     def exercicio_21_menu_simples():
 
         opcao: str = input("Digite o numero da atividade que deseja executar [1-20] ou digite 0 pra sair: ")
@@ -194,10 +204,16 @@ def exercicios():
                 exercicio_19_somar_1_ate_n()
             elif opcao == "20":
                 exercicio_20_senha_while()
+            elif opcao == "extra":
+                exercicio_extra_fatorial()
             else:
                 print("Opção inválida")
 
-            opcao = input("Digite o numero da atividade que deseja executar [1-20] ou digite 0 pra sair: ")
+            opcao = input("Digite o numero da atividade que deseja executar [1-20 ou escreva extra pro fatorial] ou digite 0 pra sair: ")
+
+        
+
+
 
     exercicio_21_menu_simples()
 
