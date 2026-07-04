@@ -161,6 +161,153 @@ def exercicios():
                 contador += 1
             print(soma)
 
+    def exercicio_22_tabuada_while():
+        i: int = 1
+        numero_tabuada: int = int(input("Digite o numero: "))
+
+        while i <= 10:
+            print(f"{i} X {numero_tabuada} = {i * numero_tabuada}")
+            i += 1
+
+    def exercicio_23_somar_ate_zero():
+        numero: int = int(input("Digite o numero: "))
+        soma: int = 0
+
+        while numero != 0:
+            soma = soma + numero
+            numero: int = int(input("Digite o numero: "))
+        print(f"Soma: {soma}")
+
+    def exercicio_24_contar_positivos():
+        numero: int = int(input("Digite o numero: "))
+        positivo: int = 0
+
+        while numero != 0:
+            if numero > 0:
+                positivo += 1
+            numero: int = int(input("Digite o numero: "))
+        print(f"Numeros positivos: {positivo}")
+
+    def exercicio_25_maior_numero():
+        i: int = 0
+        maior: int = 0
+
+        while i < 5:
+            numero: int = int(input("Digite o numero: "))
+            if i == 0:
+                maior= numero
+            elif numero > maior:
+                maior = numero
+            i += 1
+        print(f"Maior Numero: {maior}")
+
+    def exercicio_26_media_notas_while():
+        i: int = 1
+        soma: int = 0
+
+        while i <= 4:
+            nota:float = float(input(f"Digite a {i} nota: "))
+            soma = soma + nota
+            i += 1
+        print(f"A media do aluno é {soma / 4}")
+
+    def exercicio_27_senha_tentativas():
+        senha: str = input("Digite a senha: ")
+        tentativas: int = 0
+
+        while tentativas < 3:
+            if senha == "1234":
+                print("Acesso liberado")
+                return
+            else:
+                print(f"Senha incorreta, Voce tem {3 - tentativas} restantes")
+                tentativas += 1
+                senha: str = input("Digite a senha: ")
+        print("Acesso bloqueado")
+
+    def exercicio_28_validar_idade():
+        idade: int = int(input("Digite a idade: "))
+
+        while idade < 0 or idade > 120:
+            idade: int = int(input("Digite uma idade valida: "))
+        print("Idade cadastrada com sucesso!")
+
+    def exercicio_29_adivinhar_numero():
+        numero: int = int(input("Tente adivinhar o numero secreto: "))
+
+        while numero != 9:
+            if numero > 9:
+                print("O numero secreto é menor")
+                numero: int = int(input("Tente adivinhar o numero secreto: "))
+            elif numero < 9:
+                print("O numero secreto é maior")
+                numero: int = int(input("Tente adivinhar o numero secreto: "))
+        print("Parabens voce acertou")
+
+    def exercicio_30_menu_operacoes():
+
+        opcao: int = int(input("""Digite a opção:
+1 - Somar dois números
+2 - Subtrair dois números
+3 - Multiplicar dois números
+0 - Sair
+"""))
+
+        while opcao != 0:
+
+            if opcao == 1:
+                numero1: int = int(input("Digite o primeiro numero: "))
+                numero2: int = int(input("Digite o segundo numero: "))
+
+                print(f"A soma dos dois numeros é {numero1 + numero2}")
+            elif opcao == 2:
+                numero1: int = int(input("Digite o primeiro numero: "))
+                numero2: int = int(input("Digite o segundo numero: "))
+
+                print(f"A subtração dos dois numeros é {numero1 - numero2}")
+            elif opcao == 3:
+                numero1: int = int(input("Digite o primeiro numero: "))
+                numero2: int = int(input("Digite o segundo numero: "))
+
+                print(f"A multiplicação dos dois numeros é {numero1 * numero2}")
+            else:
+                print("Numero invalido")
+
+            opcao: int = int(input("""Digite a opção:
+1 - Somar dois números
+2 - Subtrair dois números
+3 - Multiplicar dois números
+0 - Sair
+"""))
+        print("Programa Encerrado")
+    
+    def exercicio_31_triangulos():
+        lado1: int = int(input("Digite o primeiro lado: "))
+        lado2: int = int(input("Digite o segundo lado: "))
+        lado3: int = int(input("Digite o terceiro lado: "))
+
+        opcao: int = int(input("1 - Equilatero\n2 - Escaleno\n 3 - Isóceles\n0 - Sair"))
+
+        while opcao != 0:
+            if opcao == 1:
+                if lado1 == lado2 and lado2 == lado3:
+                    print("Equilatero")
+                else:
+                    print("Não é Equilatero")
+            elif opcao == 2:
+                if lado1 != lado2 and lado2 != lado3 and lado1 != lado3:
+                    print("Escaleno")
+                else:
+                    print("Não é Escaleno")
+            elif opcao == 3:
+                if (lado1 == lado2 and lado2 != lado3) or (lado2 == lado3 and lado3 != lado1) or (lado3 == lado1 and lado1 != lado2):
+                   print("Isóceles")
+                else:
+                   print("Não é Isóceles")
+            opcao: int = int(input("1 - Equilatero\n2 - Escaleno\n 3 - Isóceles\n0 - Sair"))
+
+
+
     def exercicio_21_menu_simples():
 
         opcao: str = input("Digite o numero da atividade que deseja executar [1-20] ou digite 0 pra sair: ")
@@ -206,12 +353,32 @@ def exercicios():
                 exercicio_19_somar_1_ate_n()
             elif opcao == "20":
                 exercicio_20_senha_while()
+            elif opcao == "22":
+                exercicio_22_tabuada_while()
+            elif opcao == "23":
+                exercicio_23_somar_ate_zero()
+            elif opcao == "24":
+                exercicio_24_contar_positivos()
+            elif opcao == "25":
+                exercicio_25_maior_numero()
+            elif opcao == "26":
+                exercicio_26_media_notas_while()
+            elif opcao == "27":
+                exercicio_27_senha_tentativas()
+            elif opcao == "28":
+                exercicio_28_validar_idade()
+            elif opcao == "29":
+                exercicio_29_adivinhar_numero()
+            elif opcao == "30":
+                exercicio_30_menu_operacoes()
+            elif opcao == "31":
+                exercicio_31_triangulos()
             elif opcao == "extra":
                 exercicio_extra_fatorial()
             else:
                 print("Opção inválida")
 
-            opcao = input("Digite o numero da atividade que deseja executar [1-20 ou escreva extra pro fatorial] ou digite 0 pra sair: ")
+            opcao = input("Digite o numero da atividade que deseja executar [1-31 ou escreva extra pro fatorial] ou digite 0 pra sair: ")
 
         
 
