@@ -24,6 +24,30 @@ def exemplo_com_tratamento_conversao():
     
     print("ACAbow")
 
+
+def exemplo_com_multiplos_tratamentos():
+    numero1_digitado = "28"
+    numero2_digitado = "9"
+
+    try:
+        resultado: int = int(numero1_digitado) / int(numero2_digitado)
+        print("Resultado: ", resultado)
+    except ZeroDivisionError:
+        print("Não quero dividir por 0")
+    except ValueError:
+        print("Erro, eu so gosto de numeros")
+    print("Obrigado por obrigado")
+
+
+def exemplo_mensagem_erro():
+    try:
+        aluno = {"nome": "Pedro", "nota1": 9}
+        media_aluno = aluno["media"]
+        print(media_aluno)
+    except KeyError as erro: #'as' serve pra pegar a variavel do erro que ocorreu
+        print("Mensagem de erro ao acessar chave:", erro)
+
 #ponto de entrada da aplicação, deve ser unico na aplicação inteira
 if __name__ == "__main__":
     exemplo_com_tratamento_conversao()
+    exemplo_com_multiplos_tratamentos()
